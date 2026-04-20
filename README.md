@@ -74,19 +74,19 @@ hydra -l malaika -p 'xxxx' ssh://192.168.xx.xx -t 1 -V
 ## 📸 Evidence Screenshots
 
 ### 1. Hydra Attack from Kali Linux Terminal
-![Hydra Attack](screenshots/hydra_attack_kali.png)
+![Hydra Attack](screenshots/Hydra-Attack-kali 1.png)
 > THC-Hydra successfully cracking the SSH password for user `malaika` on `192.168.xx.xx`
 
 ---
 
 ### 2. Wazuh SIEM — 28 Alerts Triggered
-![Wazuh Dashboard](screenshots/wazuh_alerts_dashboard.png)
+![Wazuh Dashboard](screenshots/Wazu-SIEM-Alert 1.png)
 > Wazuh Threat Hunting module showing 28 security events including Level 12 critical alert
 
 ---
 
 ### 3. Auth Log on Victim Machine
-![Auth Log](screenshots/auth_log_victim.png)
+![Auth Log](screenshots/Authentication-logs-evidence Victim(Ubuntu) 1.png)
 > `/var/log/auth.log` on Ubuntu showing failed attempts followed by successful login
 
 ---
@@ -182,10 +182,7 @@ SOC-Lab-BruteForce-SSH/
 │   ├── hydra_attack_kali.png                     # Hydra terminal output
 │   ├── wazuh_alerts_dashboard.png                # Wazuh 28 events
 │   └── auth_log_victim.png                       # Ubuntu auth.log evidence
-│
-└── logs/
-    └── auth_log_sample.txt                       # Raw log excerpt (sanitized)
-```
+└── 
 
 ---
 
