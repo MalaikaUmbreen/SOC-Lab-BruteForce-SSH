@@ -26,7 +26,7 @@ This project documents a **controlled SSH brute force attack** performed inside 
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 - Simulate a realistic SSH brute force attack in a controlled lab
 - Validate detection capability of the **Wazuh SIEM** platform
@@ -132,9 +132,9 @@ Wazuh generated **28 security events** in the Threat Hunting module between `21:
 | **Who attacked?** | Kali Linux — `192.168.xx.xx` |
 | **Who was targeted?** | User `malaika` on `dvwa-server` |
 | **What tool was used?** | THC-Hydra v9.6 |
-| **Was it successful?** | ✅ Yes — password `xxxx` cracked |
-| **Was it detected?** | ✅ Yes — Wazuh Level 12 alert fired |
-| **Should L1 escalate?** | ✅ Yes — successful login = escalate to L2 |
+| **Was it successful?** |  Yes — password `xxxx` cracked |
+| **Was it detected?** |  Yes — Wazuh Level 12 alert fired |
+| **Should L1 escalate?** |  Yes — successful login = escalate to L2 |
 | **Severity** | 🔴 HIGH |
 
 ---
@@ -217,7 +217,9 @@ SOC-Lab-BruteForce-SSH/
 SOC Analyst — Home Lab Practitioner
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](www.linkedin.com/in/malaika-umbreen)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/Malaika Umbreen)
+https://www.linkedin.com/in/malaika-umbreen
+
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/MalaikaUmbreen)
 
 ---
 
