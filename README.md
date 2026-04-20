@@ -182,6 +182,7 @@ SOC-Lab-BruteForce-SSH/
 │   ├── hydra_attack_kali.png                     # Hydra terminal output
 │   ├── wazuh_alerts_dashboard.png                # Wazuh 28 events
 │   └── auth_log_victim.png                       # Ubuntu auth.log evidence
+|
 └── 
 
 ---
