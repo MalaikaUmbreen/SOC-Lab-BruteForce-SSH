@@ -20,9 +20,9 @@ This project documents a **controlled SSH brute force attack** performed inside 
 
 | Role | Machine | IP Address | OS / Notes |
 |------|---------|-----------|------------|
-| **Attacker** | Kali Linux (Malaika) | `192.168.40.128` | THC-Hydra v9.6 |
-| **Victim** | Ubuntu-DMZ (dvwa-server) | `192.168.40.138` | OpenSSH exposed on port 22 |
-| **SIEM Monitor** | Ubuntu-Wazuh-Server | `192.168.40.136` | Wazuh — Threat Hunting Module |
+| **Attacker** | Kali Linux (Malaika) | `192.168.xx.xx` | THC-Hydra v9.6 |
+| **Victim** | Ubuntu-DMZ (dvwa-server) | `192.168.xx.xx` | OpenSSH exposed on port 22 |
+| **SIEM Monitor** | Ubuntu-Wazuh-Server | `192.168.xx.xx` | Wazuh — Threat Hunting Module |
 
 ---
 
@@ -45,15 +45,15 @@ This project documents a **controlled SSH brute force attack** performed inside 
 
 ```bash
 # Attempt 1 — wrong password
-hydra -l malaika -p yuyry4cc43 192.168.40.138 ssh
+hydra -l malaika -p yuyry4cc43 192.168.xx.xx ssh
 
 # Attempt 2 — correct password discovered (verbose mode)
-hydra -l malaika -p 0987 ssh://192.168.40.138 -t 1 -V
+hydra -l malaika -p 'xxxx' ssh://192.168.xx.xx -t 1 -V
 ```
 
 ### Result
 ```
-[22][ssh] host: 192.168.40.138   login: malaika   password: 0987
+[22][ssh] host: 192.168.xx.xx   login: malaika   password: xxxx
 1 of 1 target successfully completed, 1 valid password found
 ```
 
@@ -65,7 +65,7 @@ hydra -l malaika -p 0987 ssh://192.168.40.138 -t 1 -V
 | `22:01:29` | Run finished — 0 valid passwords found |
 | `22:01:48` | Second Hydra run launched |
 | `22:01:52` | Run finished — 0 valid passwords found |
-| `22:01:57` | Third run with `-V` flag — **password '0987' CRACKED** |
+| `22:01:57` | Third run with `-V` flag — **password 'xxxx' CRACKED** |
 | `22:06:43` | Fourth run — wrong password, failed |
 | `22:06:48` | Final run finished |
 
@@ -75,7 +75,7 @@ hydra -l malaika -p 0987 ssh://192.168.40.138 -t 1 -V
 
 ### 1. Hydra Attack from Kali Linux Terminal
 ![Hydra Attack](screenshots/hydra_attack_kali.png)
-> THC-Hydra successfully cracking the SSH password for user `malaika` on `192.168.40.138`
+> THC-Hydra successfully cracking the SSH password for user `malaika` on `192.168.xx.xx`
 
 ---
 
@@ -96,11 +96,11 @@ hydra -l malaika -p 0987 ssh://192.168.40.138 -t 1 -V
 Raw evidence from `/var/log/auth.log` on the victim machine:
 
 ```
-Apr 19 10:37:25 dvwa-server sshd: Failed password for malaika from 192.168.40.128 port 46070 ssh2
-Apr 19 10:37:33 dvwa-server sshd: Failed password for malaika from 192.168.40.128 port 53162 ssh2
-Apr 19 10:37:44 dvwa-server sshd: Failed password for malaika from 192.168.40.128 port 34738 ssh2
-Apr 19 10:37:54 dvwa-server sshd: Failed password for malaika from 192.168.40.128 port 50074 ssh2
-Apr 19 10:38:01 dvwa-server sshd: Accepted password for malaika from 192.168.40.128 port 43248 ssh2
+Apr 19 10:37:25 dvwa-server sshd: Failed password for malaika from 192.168.xx.xx port 46070 ssh2
+Apr 19 10:37:33 dvwa-server sshd: Failed password for malaika from 192.168.xx.xx port 53162 ssh2
+Apr 19 10:37:44 dvwa-server sshd: Failed password for malaika from 192.168.xx.xx port 34738 ssh2
+Apr 19 10:37:54 dvwa-server sshd: Failed password for malaika from 192.168.xx.xx port 50074 ssh2
+Apr 19 10:38:01 dvwa-server sshd: Accepted password for malaika from 192.168.xx.xx port 43248 ssh2
 Apr 19 10:38:01 dvwa-server sshd: pam_unix(sshd:session): session opened for user malaika
 ```
 
@@ -129,10 +129,10 @@ Wazuh generated **28 security events** in the Threat Hunting module between `21:
 
 | Question | Answer |
 |----------|--------|
-| **Who attacked?** | Kali Linux — `192.168.40.128` |
+| **Who attacked?** | Kali Linux — `192.168.xx.xx` |
 | **Who was targeted?** | User `malaika` on `dvwa-server` |
 | **What tool was used?** | THC-Hydra v9.6 |
-| **Was it successful?** | ✅ Yes — password `0987` cracked |
+| **Was it successful?** | ✅ Yes — password `xxxx` cracked |
 | **Was it detected?** | ✅ Yes — Wazuh Level 12 alert fired |
 | **Should L1 escalate?** | ✅ Yes — successful login = escalate to L2 |
 | **Severity** | 🔴 HIGH |
@@ -213,11 +213,11 @@ SOC-Lab-BruteForce-SSH/
 
 ## 👤 Author
 
-**Muhammad Zariyan**
+**Malaika Umbreen**
 SOC Analyst — Home Lab Practitioner
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://linkedin.com/in/YOUR-PROFILE)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/YOUR-USERNAME)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](www.linkedin.com/in/malaika-umbreen)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/Malaika Umbreen)
 
 ---
 
