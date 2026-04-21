@@ -20,7 +20,7 @@ This project documents a **controlled SSH brute force attack** performed inside 
 
 | Role | Machine | IP Address | OS / Notes |
 |------|---------|-----------|------------|
-| **Attacker** | Kali Linux (Malaika) | `192.168.xx.xx` | THC-Hydra v9.6 |
+| **Attacker** | Kali Linux | `192.168.xx.xx` | THC-Hydra v9.6 |
 | **Victim** | Ubuntu-DMZ (dvwa-server) | `192.168.xx.xx` | OpenSSH exposed on port 22 |
 | **SIEM Monitor** | Ubuntu-Wazuh-Server | `192.168.xx.xx` | Wazuh — Threat Hunting Module |
 
