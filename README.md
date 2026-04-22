@@ -1,4 +1,4 @@
-# 🔐 SOC Lab — SSH Brute Force Attack Detection & Analysis
+#  SOC Lab — SSH Brute Force Attack Detection & Analysis
 
 ![Severity](https://img.shields.io/badge/Severity-HIGH-red?style=for-the-badge)
 ![Attack](https://img.shields.io/badge/Attack-SSH%20Brute%20Force-orange?style=for-the-badge)
